@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+    <header>
+        <div class="area">
+            <ul class="header-left">
+                <li id="user"><a href="./login.html">用户</a></li>
+                <li><a href="#">手机逛淘宝</a></li>
+                <li><a href="#">网页无障碍</a></li>
+            </ul>
+            <ul class="header-right">
+                <li>
+                    <p>
+                        <a href="./my.html">我的淘宝</a>
+                        <span><i class="iconfont icon-xiala"></i></span>
+                    </p>
+                    <div class="my-menu right-menu">
+                        <ul>
+                            <li><a href="#">已买到的宝贝</a></li>
+                            <li><a href="#">我的足迹</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><i class="iconfont icon-gouwuche-tianchong"></i><a href="./cart.html">购物车</a></li>
+                <li>
+                    <p><i class="iconfont icon-shoucang"></i><a href="#">收藏夹</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="favorites right-menu">
+                        <ul>
+                            <li><a href="#">收藏的宝贝</a></li>
+                            <li><a href="#">收藏的店铺</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">商品分类</a></li>
+                <li><a href="#">免费开店</a></li>
+                <li id="use_sign">|</li>
+                <li>
+                    <p><a href="#">千牛卖家中心</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="right-menu">
+                        <ul>
+                            <li><a href="#">开店入驻</a></li>
+                            <li><a href="#">已卖出的宝贝</a></li>
+                            <li><a href="#">出售中的宝贝</a></li>
+                            <li><a href="#">卖家服务市场</a></li>
+                            <li><a href="#">卖家培训中心</a></li>
+                            <li><a href="#">体检中心</a></li>
+                            <li><a href="#">电商学习中心</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p><a href="./service.html">联系客服</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="right-menu">
+                        <ul>
+                            <li><a href="#">消费者客服</a></li>
+                            <li><a href="#">卖家客服</a></li>
+                            <li><a href="#">意见反馈</a></li>
+                            <li><a href="#">网页版旺旺</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="tb-header-wrapper">
+        <div class="area">
+            <h1><a href="../index.html"></a></h1>
+            <div class="search">
+                <div class="tip">
+                    <ul>
+                        <li><a href="#">宝贝</a><span><i class="iconfont icon-xiala"></i></span></li>
+                    </ul>
+                </div>
+                <form action="#">
+                    <button class="btn-search">搜索</button>
+                    <input type="text">
+                    <ul id="serach-content">
+                        <!-- <li>aaaa</li> -->
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="area">
+            <div class="cart">
+                <div class="cart-header">
+                    <span class="title">购物车(全部<span class="all-count">0</span>个)</span>
+                    <div class="cart-sum">
+                        <span>已选商品(不含运费)</span>
+                        <div class="price">
+                            <span class="all-price">0.00</span>
+                        </div>
+                        <a href="#">结&nbsp算</a>
+                    </div>
+                </div>
+                <div class="cart-main">
+                    <div class="cart-table">
+                        <div class="checkall">
+                            <input type="checkbox" id="checkall">
+                            <label for="checkall">全选</label>
+                        </div>
+                        <div class="table-inner">
+                            <p>商品信息</p>
+                        </div>
+                        <div class="table-price">
+                            <p>单价</p>
+                        </div>
+                        <div class="table-num">
+                            <p>数量</p>
+                        </div>
+                        <div class="table-sum">
+                            <p>金额</p>
+                        </div>
+                        <div class="table-control">
+                            <p>操作</p>
+                        </div>
+                    </div>
+                    <div class="goods">
+                        <div class="content">
+                            <!-- <ul>
+                                <li class="td-check">
+                                    <input type="checkbox" name="" id="">
+                                </li>
+                                <li class="td-item">
+                                    <img class="item-img" src="https://img.alicdn.com/bao/uploaded/i3/2129379679/O1CN01b3x5vf2LN2IElSnWv_!!2129379679.jpg_80x80.jpg" alt="">
+                                    <p class="item-info">【99超值购】前苏联斯大林苏维埃准点下班打工人阶级假两件短袖t恤衫男女半袖</p>
+                                </li>
+                                <li class="td-pirce">
+                                    <p class="pirce-now">￥67.00</p>
+                                </li>
+                                <li class="td-num">
+                                    <div class="item-amount">
+                                        <button>-</button>
+                                        <input type="text">
+                                        <button>+</button>
+                                    </div>
+                                </li> 
+                                <li class="td-sum">
+                                    <p class="item-sum price-now">￥67.00</p>
+                                </li>
+                                <li class="td-control">
+                                    <button>删除</button>
+                                </li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jsonp.js"></script>
+    <script src="../js/request.js"></script>
+    <script>
+        function fn2(data) {
+            const { s } = data
+            document.querySelector('#serach-content').innerHTML = ''
+            s.forEach(item=>{
+                document.querySelector('#serach-content').innerHTML += `
+                    <li>${item}</li>
+                `
+            })           
+        }
+        
+        class Cart{
+            constructor(){
+                this.user =  document.querySelector('#user')
+                this.token = localStorage.getItem('token')
+                // console.log(this.token)
+                this.cartTabel = document.querySelector('.cart')
+                this.input = document.querySelector('.search input')
+                this.goods = document.querySelector('.goods .content')
+                this.cartList = JSON.parse(localStorage.getItem('cart'))
+                this.checkall = document.querySelector('.checkall')
+                this.init()   
+            }
+            init(){
+                this.detectionToken()
+                this.header = document.querySelector('.cart-header')
+                this.searching()
+                this.render()
+                this.userBehavior()
+                
+            }
+            async detectionToken(){
+                let data = await get({url:'http://127.0.0.1:1270/user/token','tokenP':this.token})
+                const {code,message,info} = JSON.parse(data)
+                if(info){
+                    const {username}= info
+                    this.user.innerHTML =`
+                        <a href="./html/my.html">欢迎，${username}</a>
+                    `
+                }
+            }
+            searching(){
+                this.input.addEventListener('input',()=>{
+                    jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su', {cb:'fn2', wd: this.input.value})  
+                    document.querySelector('#serach-content').style.display='block'
+                }) 
+                this.input.addEventListener('mouseout',()=>{
+                    document.querySelector('#serach-content').style.display='none'
+                })
+            }
+            
+            userBehavior(){
+                this.cartTabel.onclick = (e)=>{
+                    let target = e.target
+                    if(target.id == 'checkall'){
+                        let type = target.checked
+                        this.cartList.forEach(item=>{
+                            item.is_select = type
+                        })
+                        this.render()
+                    }
+
+                    if(target.className == 'select'){
+                        let id = target.dataset.id -0
+                        let goodsItem =this.cartList.find(item=>item.goods_id == id)
+                        goodsItem.is_select = !goodsItem.is_select
+                        this.render()
+                    }
+                    if(target.className == 'number_delete'){
+                        let id = target.dataset.id -0
+                        let goodsItem =this.cartList.find(item=>item.goods_id == id)
+                        if(goodsItem.cart_number == 1){
+                            return
+                        }
+                        goodsItem.cart_number--
+                        this.render()
+                    }
+                    if(target.className == 'number_add'){
+                        let id = target.dataset.id -0
+                        let goodsItem =this.cartList.find(item=>item.goods_id == id)
+                        if(goodsItem.cart_number == 10){
+                            alert('大佬，本品限购10件，实在是供不应求啦')
+                            return
+                        }
+                        goodsItem.cart_number++
+                        this.render()
+                    }
+                    if(target.className == 'del'){
+                        let id = target.dataset.id -0
+                        let index = this.cartList.findIndex(item=>item.goods_id == id)
+                        this.cartList.splice(index,1)
+                        this.render()
+                    }
+                }
+            }
+            render(){             
+                let count =0
+                let price = 0
+                this.goods.innerHTML = ''
+                this.cartList.forEach(item=>{
+                    this.goods.innerHTML +=   
+                    `
+                    <ul>
+                        <li class="td-check">
+                            <input type="checkbox" name="" class='select' ${item.is_select && 'checked'} data-id=${item.goods_id}>
+                        </li>
+                        <li class="td-item">
+                            <img class="item-img" src="${item.img_small_logo}" alt="">
+                            <p class="item-info">${item.title}</p>
+                        </li>
+                        <li class="td-pirce">
+                            <p class="pirce-now">￥${item.price}</p>
+                        </li>
+                        <li class="td-num">
+                            <div class="item-amount">
+                                <button class='number_delete' data-id=${item.goods_id}>-</button>
+                                <input type="text" value=${item.cart_number}>
+                                <button class='number_add' data-id=${item.goods_id}>+</button>
+                            </div>
+                        </li> 
+                        <li class="td-sum">
+                            <p class="item-sum price-now">￥${item.price*item.cart_number}</p>
+                        </li>
+                        <li class="td-control">
+                            <button class='del' data-id=${item.goods_id}>删除</button>
+                        </li>
+                    </ul>
+                    `
+                    count +=item.cart_number
+                    if(item.is_select == true){
+                        price += item.cart_number * item.price
+                    }
+                });
+                
+
+                this.header.innerHTML = `
+                    <span class="title">购物车(全部<span class="all-count">${count}</span>个)</span>
+                    <div class="cart-sum">
+                        <span>已选商品(不含运费)</span>
+                        <div class="price">
+                            <span class="all-price">${price.toFixed(2)}</span>
+                        </div>
+                        <a href="#">结&nbsp算</a>
+                    </div>
+                `
+                let res = this.cartList.every(item=>item.is_select == true)
+                if(!this.cartList.length){
+                    res = false
+                }
+                this.checkall.innerHTML = `
+                        <input type="checkbox" id="checkall" ${res && 'checked'}>
+                        <label for="checkall">全选</label>
+                `
+                localStorage.setItem('cart',JSON.stringify(this.cartList))
+            }
+        }
+        new Cart()
+    </script>
+</body>
+</html>

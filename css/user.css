@@ -1,0 +1,16 @@
+#hotpink{
+    background-color: hotpink !important;
+}
+#table th{
+    text-align: center !important;
+}
+#table td{
+    text-align: center !important;
+}
+#table td button{
+    width: 25%;
+    margin-left: 20px;
+}
+#table td button:first-child{
+   margin: 0px;
+}

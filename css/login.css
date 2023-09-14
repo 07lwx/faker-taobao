@@ -1,0 +1,126 @@
+.header{
+    margin: 22px auto;
+    height: 44px;
+}
+.header .area{
+    width: 1080px;
+    margin: 0 auto;
+}
+.header .logo{
+    height: 46px;
+}
+.header .logo h1{
+    display: block;
+    width: 110px;
+    height: 46px;
+    float: left;
+}
+.header .logo h1 a{
+    width: 72px;
+    height: 46px;
+    display: block;
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.header .logo .logo-right{
+    width: 126px;
+    height: 42px;
+    float: right;
+}
+.header .logo .logo-right a{
+    display: block;
+    line-height: 21px;
+    font-size: 12px;
+}
+.header .logo .logo-right a:nth-child(2){
+    margin-left: -20px;
+}
+.header .logo .logo-right a:nth-child(2) i{
+    color: #f40;
+}
+.main{
+    width: 100%;
+    height: 600px;
+    background-image: url(../img/login-layout.png);
+    background-position: 50%;
+    display: absolute;
+}
+.main .login-layout{
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 999;
+}
+.main .login-layout .login-main{
+    background-color: hsla(0,0%,100%,.9);
+    padding: 25px;
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 120px;
+    right: 60px;
+    
+}
+.main .login-layout .login-main .title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+.main .login-layout .login-main .form{
+    width: 350px;
+    height: 240px;
+    /* background-color: red; */
+}   
+.main .login-layout .login-main .form .fm-input{
+    width: 300px;
+    margin: 0 auto;
+    height: 42px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.main .login-layout .login-main .form .fm-input i{
+    position: absolute;
+    width: 40px;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+    color: white;
+    background-color: gray;
+}
+.main .login-layout .login-main .form .fm-input input{
+    width: 300px;
+    height: 42px;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+.main .login-layout .login-main .form .fm-btn{
+    width: 300px;
+    margin: 0 auto;
+}
+.main .login-layout .login-main .form .fm-btn button{
+    width: 300px;
+    height: 42px;
+    background-color: #f40;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.main .login-layout .login-main .form .fm-message{
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 300px;
+    height: 30px;
+}
+.main .login-layout .login-main .form .login-links{
+    font-size: 12px;
+    line-height: 18px;
+    height: 18px;
+    float: right;
+    margin-top: 10px;
+    color: #6c6c6c;
+}

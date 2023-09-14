@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反馈中心</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+
+</head>
+<body>
+    <header>
+        <div class="area">
+            <ul class="header-left">
+                <li id="user"><a href="./login.html">用户</a></li>
+                <li><a href="#">手机逛淘宝</a></li>
+                <li><a href="#">网页无障碍</a></li>
+            </ul>
+            <ul class="header-right">
+                <li>
+                    <p><a href="./my.html">我的淘宝</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="my-menu right-menu">
+                        <ul>
+                            <li><a href="#">已买到的宝贝</a></li>
+                            <li><a href="#">我的足迹</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><i class="iconfont icon-gouwuche-tianchong"></i><a href="./cart.html">购物车</a></li>
+                <li>
+                    <p><i class="iconfont icon-shoucang"></i><a href="#">收藏夹</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="favorites right-menu">
+                        <ul>
+                            <li><a href="#">收藏的宝贝</a></li>
+                            <li><a href="#">收藏的店铺</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">商品分类</a></li>
+                <li><a href="#">免费开店</a></li>
+                <li id="use_sign">|</li>
+                <li>
+                    <p><a href="#">千牛卖家中心</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="right-menu">
+                        <ul>
+                            <li><a href="#">开店入驻</a></li>
+                            <li><a href="#">已卖出的宝贝</a></li>
+                            <li><a href="#">出售中的宝贝</a></li>
+                            <li><a href="#">卖家服务市场</a></li>
+                            <li><a href="#">卖家培训中心</a></li>
+                            <li><a href="#">体检中心</a></li>
+                            <li><a href="#">电商学习中心</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p><a href="./service.html">联系客服</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="right-menu">
+                        <ul>
+                            <li><a href="#">消费者客服</a></li>
+                            <li><a href="#">卖家客服</a></li>
+                            <li><a href="#">意见反馈</a></li>
+                            <li><a href="#">网页版旺旺</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="area">
+            <div class="container-header">
+                <h1><a href="../index.html"></a></h1>
+            </div>
+            <div class="feedback-form">
+                <div class="title">意见反馈</div>
+                <form action="">
+                    <div class="talk top-section">
+                        <label for="">
+                            Hi，请输入您对<span>网页版淘宝</span>的问题反馈或建议吧～
+                        </label>
+                        <div class="item-control">
+                            <textarea  rows="4" placeholder="请描述淘宝使用问题，某个功能无法使用/不好用、流程受阻、页面卡顿、或其他产品建议（5个字以上）"></textarea>
+                        </div>
+                    </div>
+                    <div class="user-phone top-section">
+                        <label for="">联系电话 <span>解决过程中方便与我们联系</span></label>
+                        <div class="item-control">
+                            <input type="text" placeholder="请输入您的手机号">
+                        </div>
+                    </div>
+                    <div class="top-section form-submit">
+                        <button>提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../js/request.js"></script>
+    <script>
+        class Feedback{
+            constructor(){
+                this.user = document.querySelector('#user')
+                this.token = localStorage.getItem('token')
+                // console.log(this.token)
+                this.init()
+            }
+            init(){
+                this.render()
+            }
+            render(){
+                this.detectionToken()
+            }
+            async detectionToken(){
+                let data = await get({url:'http://127.0.0.1:1270/user/token','tokenP':this.token})
+                console.log(this.token)
+                const {code,message,info} = JSON.parse(data)
+                if(info){
+                    const {username}= info
+                    this.user.innerHTML =`
+                        <a href="./my.html">欢迎，${username}</a>
+                    `
+                }
+            }
+        }
+        new Feedback()
+    </script>
+</body>
+</html>

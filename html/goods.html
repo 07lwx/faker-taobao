@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情页</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/goods.css">
+</head>
+<body>
+    <header>
+        <div class="area">
+            <ul class="header-left">
+                <li id="user"><a href="./login.html">用户</a></li>
+                <li><a href="#">手机逛淘宝</a></li>
+                <li><a href="#">网页无障碍</a></li>
+            </ul>
+            <ul class="header-right">
+                <li>
+                    <p><a href="./my.html">我的淘宝</a><span><i class="iconfont icon-xiala"></i></span>
+                    <div class="my-menu right-menu">
+                        <ul>
+                            <li><a href="#">已买到的宝贝</a></li>
+                            <li><a href="#">我的足迹</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><i class="iconfont icon-gouwuche-tianchong"></i><a href="./cart.html">购物车</a></li>
+                <li>
+                    <p><i class="iconfont icon-shoucang"></i><a href="#">收藏夹</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="favorites right-menu">
+                        <ul>
+                            <li><a href="#">收藏的宝贝</a></li>
+                            <li><a href="#">收藏的店铺</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">商品分类</a></li>
+                <li><a href="#">免费开店</a></li>
+                <li id="use_sign">|</li>
+                <li>
+                    <p><a href="#">千牛卖家中心</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="right-menu">
+                        <ul>
+                            <li><a href="#">开店入驻</a></li>
+                            <li><a href="#">已卖出的宝贝</a></li>
+                            <li><a href="#">出售中的宝贝</a></li>
+                            <li><a href="#">卖家服务市场</a></li>
+                            <li><a href="#">卖家培训中心</a></li>
+                            <li><a href="#">体检中心</a></li>
+                            <li><a href="#">电商学习中心</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p><a href="./service.html">联系客服</a><span><i class="iconfont icon-xiala"></i></span></p>
+                    <div class="right-menu">
+                        <ul>
+                            <li><a href="#">消费者客服</a></li>
+                            <li><a href="#">卖家客服</a></li>
+                            <li><a href="#">意见反馈</a></li>
+                            <li><a href="#">网页版旺旺</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="tb-header-wrapper">
+        <div class="area">
+            <h1><a href="../index.html"></a></h1>
+            <div class="search">
+                <div class="tip">
+                    <ul>
+                        <li><a href="#">宝贝</a><span><i class="iconfont icon-xiala"></i></span></li>
+                    </ul>
+                </div>
+                <form action="#">
+                    <button class="btn-search">搜索</button>
+                    <input type="text">
+                    <ul id="serach-content">
+                        <!-- <li>aaaa</li> -->
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="item-content">
+        <div class="left-content">
+            <!-- <div class="item-img">
+                <img src="../img/甜甜花娘坤.jpg" alt="" class="small-img">
+                <div class="big">
+                    <img src="../img/甜甜花娘坤.jpg" alt="" class="big-img">
+                </div>
+            </div> -->
+        </div>
+        <div class="right-content">
+            <div class="item-title">
+                <!-- <h1>大容量男士双肩包休闲旅游旅行电脑背包女高中初中学生书包大学生</h1> -->
+            </div>
+            <div class="item-price">
+                <span class="yuan">￥</span>
+                <span class="value"></span>
+                <span class="begin">起</span>
+                <span class="price-Action">前往手淘查看更多优惠 ></span>
+            </div>
+            <div class="quantityLine">
+                <span class="countText">数量：</span>
+                <div class="count-wrapper">
+                    <div class="conunt-delect count-btn">
+                        <span>-</span>
+                    </div>
+                    <div class="conunt-content"><input type="text" value="1"></div>
+                    <div class="conunt-add count-btn">
+                        <span>+</span>
+                    </div>
+                </div>
+                <span class="quantity-tip">有货</span>
+            </div>
+            <div class="item-action">
+                <div class="left-action">
+                    <button class="left-button">立即购买</button>
+                    <button class="right-button">加入购物车</button>
+                </div>
+                <button class="right-action">
+                    
+                    <span><i class="iconfont icon-shoucang"></i>收藏</span>
+                </button>
+            </div>
+        </div>
+        <div class="table-root">
+            <div class="table-header">
+                <div class="table-tips">
+                    <span>宝贝详情</span>
+                    <div class="table-slag"></div>
+                </div>
+            </div>
+            <div class="table-container">
+                
+            </div>
+        </div>
+    </div>
+    <script src="../js/request.js"></script>
+    <script src="../js/jsonp.js"></script>
+
+    <script>
+        function fn2(data) {
+            const { s } = data
+            document.querySelector('#serach-content').innerHTML = ''
+            s.forEach(item=>{
+                document.querySelector('#serach-content').innerHTML += `
+                    <li>${item}</li>
+                `
+            })           
+        }
+        class Goods{
+            constructor(){
+                this.id = localStorage.getItem('list_id')
+                this.user =  document.querySelector('#user')
+                this.token = localStorage.getItem('token')
+                // console.log(this.token)
+                this.leftContent = document.querySelector('.left-content') 
+                this.itemTitle= document.querySelector('.item-title')
+                this.itemValue = document.querySelector('.item-price .value')
+                this.tableContent = document.querySelector('.table-container')
+               
+                this.input = document.querySelector('.search input')
+               
+                this.init()
+            }
+            init(){
+                this.render()
+            }
+            render(){
+                this.detectionToken()
+                this.getGoods()
+                this.searching()
+                this.addCart()
+
+            }
+            async detectionToken(){
+                let data1 = await get({url:'http://127.0.0.1:1270/user/token','tokenP':this.token})
+                const {code,message,info} = JSON.parse(data1)
+                console.log(JSON.parse(data1))
+                if(info){
+                    const {username}= info
+                    this.user.innerHTML =`
+                        <a href="./html/my.html">欢迎，${username}</a>
+                    `
+                }
+            }
+            addCart(){
+                let conuntDelect = document.querySelector('.conunt-delect')
+                let conunt = document.querySelector('.conunt-content input')
+                let conuntAdd = document.querySelector('.conunt-add')
+                let cartAdd = document.querySelector('.right-button')
+                
+                conuntDelect.onclick = ()=>{
+                    conunt.value--
+                    if(conunt.value <0){
+                        conunt.value =0
+                    }
+                } 
+                conuntAdd.onclick = ()=>{
+                    conunt.value++
+                    if(conunt.value>10){
+                        conunt.value =10
+                        alert('该物品每人限购10件哦')
+                    }
+                }
+                cartAdd.onclick =()=>{
+                  
+                    this.data.cart_number = this.data.cart_number-0
+                    this.data.cart_number += conunt.value-0
+                    if(this.data.cart_number>10){
+                        this.data.cart_number =10
+                        alert('该物品每人限购10件哦')
+                    }
+                    alert('添加至购物车成功')
+                    let list = JSON.parse(localStorage.getItem('cart')) ||[]
+                    console.log(list)
+                    
+                    if(!list.length){
+                        list.push(this.data)
+                    }else{
+                        let res = list.some(item=>item.goods_id ==this.data.goods_id)
+                        console.log(res)
+                        if(res){
+                            let index = list.findIndex(item=>item.goods_id ==this.data.goods_id)
+                            list[index].cart_number = this.data.cart_number
+                        }else{
+                            list.push(this.data)
+                        }
+                    }
+                    localStorage.setItem('cart',JSON.stringify(list))
+                }
+            }
+            searching(){
+                this.input.addEventListener('input',()=>{
+                    jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su', {cb:'fn2', wd: this.input.value})  
+                    document.querySelector('#serach-content').style.display='block'
+                }) 
+                this.input.addEventListener('mouseout',()=>{
+                    document.querySelector('#serach-content').style.display='none'
+                })
+            }
+            async getGoods(){
+                let data2 = await get({url:'http://127.0.0.1:1270/goods/list'})
+                let itemData = JSON.parse(data2).filter(item => item.goods_id ==this.id);
+                this.data = itemData[0]
+                // console.log(this.data)
+                this.leftContent.innerHTML = `
+                    <div class="item-img">
+                        <div class="mask"></div>
+                        <div class="small">
+                            <img src="${this.data.img_big_logo}" alt="" class="small-img">
+                            
+                        </div>
+                        <div class="big">
+                            <img src="${this.data.img_big_logo}" alt="" class="big-img">
+                        </div>
+                    </div>
+                `
+                this.itemTitle.innerHTML = `
+                        <h1>${this.data.title}</h1>
+                    `
+                this.itemValue.innerHTML=this.data.price
+                this.tableContent.innerHTML = this.data.goods_introduce
+                let Simg = document.querySelector('.item-img')
+                let Bimg = document.querySelector('.big-img')
+                let mask = document.querySelector('.item-img .mask')
+                
+                Simg.addEventListener('mouseover',(e)=>{
+                    mask.style.display = 'block'
+                    Bimg.parentElement.style.display = 'block'
+                    
+                    Simg.addEventListener('mousemove',(e)=>{
+                        let x = e.pageX - mask.clientWidth/2 -Simg.offsetLeft -Simg.parentElement.parentElement.offsetLeft
+                        let y = e.pageY - mask.clientHeight/2 -Simg.offsetTop -Simg.parentElement.parentElement.offsetTop
+                        let num = Bimg.clientWidth/Simg.clientWidth
+                        if(x<0){
+                            x=0;
+                        }else if(x>Simg.clientWidth-mask.clientWidth){
+                            x=Simg.clientWidth-mask.clientWidth
+                        }
+                        if(y<0){
+                            y=0;
+                        }else if(y>Simg.clientHeight-mask.clientHeight){
+                            y=Simg.clientHeight-mask.clientHeight
+                        }
+                        mask.style.left =  x +'px';
+                        mask.style.top =  y +'px';
+                        Bimg.style.left =  -x*num +'px';
+                        Bimg.style.top =  -y*num +'px';
+                    })
+                })
+                Simg.addEventListener('mouseout',()=>{
+                    mask.style.display = 'none'
+                    Bimg.parentElement.style.display = 'none'
+                })
+            }
+        }
+        new Goods()
+    </script>
+</body>
+</html>

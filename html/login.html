@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎登陆</title>
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="header">
+        <div class="area">
+            <div class="logo">
+                <h1><a href="../index.html"></a></h1>
+                <div class="logo-right">
+                    <a href="#">网站无障碍</a>
+                    <a href="./feedback.html"><i class="iconfont icon-fasongyoujian"></i> 页面改进建议</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="login-layout">
+            <div class="login-main">
+                <div class="title">欢迎登陆淘宝网！</div>
+                <div class="form">
+                    <div class="fm-input"><i class="iconfont icon-yonghu"></i><input type="text" class="username" placeholder="账号名/邮箱/手机号"></div>
+                    <div class="fm-input"><i class="iconfont icon-suoding"></i><input type="password" class="password" placeholder="请输入登录密码"></div>
+                    <div class="fm-btn"><button id="login">登录</button></div>
+                    <div class="fm-message"></div>
+                    <div class="login-links">
+                        <a href="./password.html">忘记密码</a>
+                        <a href="./register.html">免费注册</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/request.js"></script>
+    <script>
+        class Login{
+            constructor(){
+                this.btn = document.querySelector('#login')
+                this.name = document.querySelector('.username')
+                this.pwd = document.querySelector('.password')
+                this.message = document.querySelector('.fm-message')
+                this.init()
+            }
+            init(){
+                this.btn.onclick =()=>{
+                    this.request()
+                }
+            }
+            render(){
+                
+            }
+            async request(){
+                const data = await post({url:'http://127.0.0.1:1270/user/login',params:{'username':this.name.value,'password':this.pwd.value}})
+                const {code,message,token} = JSON.parse(data)
+                if(code == 1){
+                    alert(message+'，正在为您跳转到首页')
+                    localStorage.setItem('token', token)
+                    location.href = '../index.html'
+                }else if(code==0){
+                    this.message.innerHTML = message;
+                    this.message.style.color = 'red';
+                }
+            }
+        }
+        new Login()
+    </script>
+</body>
+</html>
